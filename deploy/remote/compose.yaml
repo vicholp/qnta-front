@@ -12,10 +12,11 @@ services:
       - "traefik.enable=true"
       - "traefik.docker.network=traefik"
 
-      - "traefik.http.routers.insecure-${APP_NAME}-${ENVIRONMENT}.entrypoints=http"
+      - "traefik.http.routers.insecure-${APP_NAME}-${ENVIRONMENT}.entrypoints=webinsecure"
       - "traefik.http.routers.insecure-${APP_NAME}-${ENVIRONMENT}.rule=Host(`${TRAEFIK_HOST}`)"
       - "traefik.http.routers.insecure-${APP_NAME}-${ENVIRONMENT}.middlewares=redirectToHttps@file"
 
+      - "traefik.http.routers.${APP_NAME}-${ENVIRONMENT}.entrypoints=websecure"
       - "traefik.http.routers.${APP_NAME}-${ENVIRONMENT}.rule=Host(`${TRAEFIK_HOST}`)"
       - "traefik.http.routers.${APP_NAME}-${ENVIRONMENT}.tls=true"
       - "traefik.http.routers.${APP_NAME}-${ENVIRONMENT}.tls.certresolver=${TRAEFIK_CERT_RESOLVER}"

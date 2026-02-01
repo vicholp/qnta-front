@@ -15,7 +15,7 @@
           <div>
             {{ account ? account.name : 'Cargando...' }}
           </div>
-          <div class="ml-auto text-xs bg-neutral-800 px-2 py-1 rounded-full">
+          <div class="ml-auto text-xs bg-neutral-800 px-2 py-1 rounded-full" @click="copyText(account.name)">
             copiar
           </div>
         </div>
@@ -23,7 +23,7 @@
           <div>
             {{ account ? account.rut : 'Cargando...' }}
           </div>
-          <div class="ml-auto text-xs bg-neutral-800 px-2 py-1 rounded-full">
+          <div class="ml-auto text-xs bg-neutral-800 px-2 py-1 rounded-full" @click="copyText(account.rut)">
             copiar
           </div>
         </div>
@@ -31,7 +31,7 @@
           <div>
             {{account ? BANKS.find(bank => bank.value === account.bank)?.label : 'Cargando...'}}
           </div>
-          <div class="ml-auto text-xs bg-neutral-800 px-2 py-1 rounded-full">
+          <div class="ml-auto text-xs bg-neutral-800 px-2 py-1 rounded-full" @click="copyText(account.bank)">
             copiar
           </div>
         </div>
@@ -39,7 +39,7 @@
           <div>
             {{account ? ACCOUNT_TYPES.find(type => type.value === account.type)?.label : 'Cargando...'}}
           </div>
-          <div class="ml-auto text-xs bg-neutral-800 px-2 py-1 rounded-full">
+          <div class="ml-auto text-xs bg-neutral-800 px-2 py-1 rounded-full" @click="copyText(account.type)">
             copiar
           </div>
         </div>
@@ -50,7 +50,7 @@
           <div>
             {{ account ? account.number : 'Cargando...' }}
           </div>
-          <div class="ml-auto text-xs bg-neutral-800 px-2 py-1 rounded-full">
+          <div class="ml-auto text-xs bg-neutral-800 px-2 py-1 rounded-full" @click="copyText(account.number)">
             copiar
           </div>
         </div>
@@ -58,13 +58,13 @@
           <div>
             {{ account ? account.email : 'Cargando...' }}
           </div>
-          <div class="ml-auto text-xs bg-neutral-800 px-2 py-1 rounded-full">
+          <div class="ml-auto text-xs bg-neutral-800 px-2 py-1 rounded-full" @click="copyText(account.email)">
             copiar
           </div>
         </div>
         
       </div>
-      <div class="border border-neutral-50 font-medium text-sm bg-neutral-950/50 rounded-lg p-2 text-center">
+      <div class="border border-neutral-50 font-medium text-sm bg-neutral-950/50 rounded-lg p-2 text-center" @click="copyAll">
         Copiar todos los datos
       </div>
     </div>
@@ -96,9 +96,23 @@ export default {
       ACCOUNT_TYPES,
     };
   },
+  methods: {
+    copyText(text) {
+      navigator.clipboard.writeText(text);
+    },
+    copyAll() {
+      const allData = `${this.account.name}
+      ${this.account.rut}
+      ${this.BANKS.find(bank => bank.value === this.account.bank)?.label}
+      ${this.ACCOUNT_TYPES.find(type => type.value === this.account.type)?.label}
+      ${this.account.number}
+      ${this.account.email}`;
+      navigator.clipboard.writeText(allData);
+    },
+  },
   mounted() {
     getAccount(this.accountName).then((data) => {
-      this.account = data;
+      this.account = data.data;
     });
   },
 };
