@@ -28,7 +28,7 @@
       </RouterLink>
       te equivocaste? registrate de nuevo con el mismo rut
     </div>
-    <div class="dark:bg-neutral-950 bg-neutral-100 p-3 rounded text-neutral-300 text-center text-sm flex flex-col gap-3" v-if="account_not_found">
+    <div class="dark:bg-neutral-950 bg-neutral-50 border-neutral-100 shadow dark:shadow-none text-black p-3 rounded-xl dark:text-neutral-300 text-center text-sm flex flex-col gap-3" v-if="account_not_found">
       Esta cuenta aun no existe. qnta.cl/{{accountName}} puede ser tu link
       <RouterLink to="/" class="font-bold underline cursor-pointer">
         Registrate aqui
