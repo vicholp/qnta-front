@@ -1,8 +1,6 @@
 <template>
     <div class="flex gap-2 items-center">
-        <div v-if="prefix" class="italic">
-            {{ prefix }}
-        </div>
+        <i v-if="icon" :class="`${ icon }`"></i>
         <div>
             {{ value }}
         </div>
@@ -16,7 +14,7 @@
 
 export default {
     props: {
-        prefix: {
+        icon: {
             type: String,
             required: true
         },

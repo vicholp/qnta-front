@@ -8,7 +8,7 @@
     <div class="">
       Obtén un enlace único a tus datos bancarios
     </div>
-    <div class="dark:bg-neutral-950/50 border dark:border-neutral-800 p-5 rounded-xl flex flex-col gap-5 bg-neutral-50 border-neutral-100 shadow-lg dark:shadow-none">
+    <div class="glass-card dark:bg-neutral-950/50 border dark:border-neutral-800 p-5 rounded-xl flex flex-col gap-5 bg-neutral-50 border-neutral-100 shadow-lg dark:shadow-none">
       <div class="flex flex-col gap-4">
 
         <div class="flex gap-2 items-center">
