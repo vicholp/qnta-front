@@ -1,1 +1,14 @@
 @import "tailwindcss";
+
+@layer base {
+
+    html,
+    body {
+        height: 100%;
+    }
+
+    #app {
+        height: inherit;
+        width: inherit;
+    }
+}

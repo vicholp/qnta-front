@@ -1,0 +1,33 @@
+.glass-card {
+    background: rgba(0, 0, 0, 0.11);
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(23px);
+    border-radius: 20px;
+
+    position: relative;
+    overflow: hidden;
+
+    animation: rotate-border 10s infinite;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+}
+
+@keyframes rotate-border {
+    0% {
+        border-color: rgba(54, 54, 54, 0.555);
+    }
+
+    25% {
+        border-color: rgba(20, 0, 107, 0.411);
+    }
+
+    50% {
+        border-color: rgba(102, 0, 88, 0.342);
+    }
+
+    75% {
+        border-color: rgba(54, 54, 54, 0.555);
+    }
+
+    100% {}
+}
