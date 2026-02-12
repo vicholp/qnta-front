@@ -12,12 +12,12 @@
         {{ account ? account.name : 'Cargando...' }} - {{ account ? account.slug : 'Cargando...' }}
       </div>
       <div class="flex flex-col gap-4">
-        <AccountField icon="bi bi-person-arms-up" :value="account?.name" />
-        <AccountField icon="bi bi-person-vcard" :value="account?.rut" />
-        <AccountField icon="bi bi-bank" :value="account ? BANKS.find(bank => bank.value === account.bank)?.label : ''" />
-        <AccountField icon="bi bi-wallet2" :value="account ? ACCOUNT_TYPES.find(type => type.value === account.type)?.label : ''" />
-        <AccountField icon="bi bi-credit-card" :value="account?.number" />
-        <AccountField icon="bi bi-envelope" :value="account?.email" />        
+        <AccountField icon="bi:person-arms-up" :value="account?.name" />
+        <AccountField icon="bi:person-vcard" :value="account?.rut" />
+        <AccountField icon="bi:bank" :value="account ? BANKS.find(bank => bank.value === account.bank)?.label : ''" />
+        <AccountField icon="ion:wallet-outline" :value="account ? ACCOUNT_TYPES.find(type => type.value === account.type)?.label : ''" />
+        <AccountField icon="ion:card-outline" :value="account?.number" />
+        <AccountField icon="material-symbols:mail-outline-rounded" :value="account?.email" />        
       </div>
       <div :class="`border  font-medium text-sm ${copied? 'dark:border-neutral-950 dark:bg-neutral-50 dark:text-black bg-black text-white' : 'dark:border-neutral-50 dark:bg-neutral-950/50 dark:text-white'} transition-all duration-500 rounded-lg p-2 text-center`" @click="copyAll">
         {{copied ? 'Copiado!' : 'Copiar todos los datos' }}

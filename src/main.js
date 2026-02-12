@@ -3,7 +3,6 @@ import App from './App.vue'
 import './main.css'
 import './glass.css'
 import './background.css'
-import 'bootstrap-icons/font/bootstrap-icons.css';
 
 import { createWebHistory, createRouter } from 'vue-router'
 

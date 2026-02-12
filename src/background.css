@@ -1,13 +1,14 @@
-.rotating-bg {
-    animation: rotate-bg-color 10s infinite;
-    height: inherit;
-    width: inherit;
+@layer components {
+    .rotating-bg {
+        animation: rotate-bg-color 10s infinite;
+        height: inherit;
+        width: inherit;
 
-    background-image: linear-gradient(30deg, #000000 12%, transparent 12.5%, transparent 87%, #000000 87.5%, #000000), linear-gradient(150deg, #000000 12%, transparent 12.5%, transparent 87%, #000000 87.5%, #000000), linear-gradient(30deg, #000000 12%, transparent 12.5%, transparent 87%, #000000 87.5%, #000000), linear-gradient(150deg, #000000 12%, transparent 12.5%, transparent 87%, #000000 87.5%, #000000), linear-gradient(60deg, #00000077 25%, transparent 25.5%, transparent 75%, #00000077 75%, #00000077), linear-gradient(60deg, #00000077 25%, transparent 25.5%, transparent 75%, #00000077 75%, #00000077);
+        background-image: linear-gradient(30deg, #000000 12%, transparent 12.5%, transparent 87%, #000000 87.5%, #000000), linear-gradient(150deg, #000000 12%, transparent 12.5%, transparent 87%, #000000 87.5%, #000000), linear-gradient(30deg, #000000 12%, transparent 12.5%, transparent 87%, #000000 87.5%, #000000), linear-gradient(150deg, #000000 12%, transparent 12.5%, transparent 87%, #000000 87.5%, #000000), linear-gradient(60deg, #00000077 25%, transparent 25.5%, transparent 75%, #00000077 75%, #00000077), linear-gradient(60deg, #00000077 25%, transparent 25.5%, transparent 75%, #00000077 75%, #00000077);
 
-    background-position: 0 0, 0 0, 30px 53px, 30px 53px, 0 0, 30px 53px;
+        background-position: 0 0, 0 0, 30px 53px, 30px 53px, 0 0, 30px 53px;
+    }
 }
-
 
 
 @keyframes rotate-bg-color {
@@ -33,5 +34,127 @@
     100% {
         background-color: rgba(0, 0, 0, 0.486);
 
+    }
+}
+
+@keyframes rotate-bg {
+    0% {
+        background-color: rgba(100, 3, 71, 0.432);
+    }
+
+    25% {
+        background-color: rgba(20, 0, 107, 0.623);
+    }
+
+    50% {
+        background-color: rgba(102, 0, 88, 0.527);
+    }
+
+    75% {
+        background-color: rgba(29, 0, 160, 0.212);
+    }
+
+    100% {
+        background-color: rgba(115, 102, 173, 0.336);
+    }
+}
+
+.lamp {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    height: 100vh;
+    max-height: 100%;
+    width: 100vw;
+    min-width: 100vw;
+    z-index: -1;
+}
+
+.lava {
+    filter: url("#goo");
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+.blob {
+    border-radius: 50%;
+    /* Other sample colors:
+  Orange: #e8630a
+  Pink: #EA3281
+  Fuscia: #E71669
+  Purple: #661BAC
+  Yellow: #FDC600
+  Kermit green: #75AC25
+  Light blue: #3283B5
+  Dark blue: #0A5D9A
+  Gunmetal: #232F37
+  BGLight: #1B2735
+  BGDark: #090a0f
+  Want more colors? check out https://coolors.co/ for inspiration.
+  */
+    position: absolute;
+
+    width: 200px;
+    height: 200px;
+    left: 35%;
+    bottom: -15%;
+
+    animation: rotate-bg 10s ease-in-out infinite, wobble 4s ease-in-out alternate infinite, blob-translation ease-in-out 13s infinite;
+
+}
+
+
+
+.blob.top {
+    border-radius: 50%;
+    width: 100%;
+    height: 5%;
+    top: -3%;
+    left: 0;
+    animation: rotate-bg 10s ease-in-out infinite;
+}
+
+.blob.bottom {
+    border-radius: 50%;
+    width: 100%;
+    height: 5%;
+    bottom: -3%;
+    left: 0;
+    animation: rotate-bg 10s ease-in-out infinite;
+}
+
+@property --translation {
+    syntax: '<percentage>';
+    /* Defines the variable's type */
+    initial-value: 0%;
+    /* Sets the starting value */
+    inherits: false;
+    /* Controls inheritance */
+}
+
+@keyframes blob-translation {
+
+    0%,
+    100% {
+        transform: translatey(0);
+    }
+
+    50% {
+        transform: translatey(var(--translation));
+    }
+}
+
+@keyframes wobble {
+    50% {
+        border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+    }
+
+    100% {
+        border-radius: 38% 52% 75% 36% / 50% 40% 50% 60%;
     }
 }

@@ -1,6 +1,6 @@
 <template>
     <div class="flex gap-2 items-center">
-        <i v-if="icon" :class="`${ icon }`"></i>
+        <Icon v-if="icon" :icon="`${ icon }`"/>
         <div>
             {{ value }}
         </div>
@@ -11,8 +11,12 @@
 </template>
 
 <script>
+import { Icon } from "@iconify/vue";
 
 export default {
+    components: {
+        Icon
+    },
     props: {
         icon: {
             type: String,

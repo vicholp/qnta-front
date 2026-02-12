@@ -106,10 +106,10 @@
         {{isValid ? `guardar datos en qnta.cl/${account.slug}` : 'completa todos los campos antes de guardar'}}
       </div>
     </div>
-    <div class="dark:bg-neutral-950 bg-neutral-50 border-neutral-100 shadow dark:shadow-none text-black p-3 rounded-xl dark:text-neutral-300 text-center text-sm flex flex-col gap-3">
+    <div class="glass-card dark:bg-neutral-950 bg-neutral-50 border-neutral-100 shadow dark:shadow-none text-black p-3 rounded-xl dark:text-neutral-300 text-center text-sm flex flex-col gap-3">
       te equivocaste? registrate de nuevo con el mismo rut
     </div>
-    <div class="px-5 py-3 gap-5 text-sm">
+    <div class="px-5 py-3 gap-5 text-sm ">
         Inspirado fuertemente en num.cl <br>
         Hecho por un ser de carne y hueso 🍖.
         Revisa el codigo en <a href="https://github.com/vicholp/qnta">GitHub</a>.
