@@ -111,7 +111,7 @@
     </div>
     <div class="px-5 py-3 gap-5 text-sm ">
         Inspirado fuertemente en num.cl <br>
-        Hecho por un ser de carne y hueso 🍖.
+        Hecho por seres de carne y hueso 🍖.
         Revisa el codigo en <a href="https://github.com/vicholp/qnta">GitHub</a>.
     </div>
   </div>

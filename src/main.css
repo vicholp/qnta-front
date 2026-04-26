@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@source inline("bg-linear-{0..360}");
+
 @layer base {
 
     html,

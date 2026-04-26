@@ -1,8 +1,6 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import './main.css'
-import './glass.css'
-import './background.css'
 
 import { createWebHistory, createRouter } from 'vue-router'
 
