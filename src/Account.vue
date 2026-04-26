@@ -46,10 +46,6 @@
 import { BANKS, ACCOUNT_TYPES } from './consts.js';
 import { getAccount } from './api.js';
 import AccountField from './AccountField.vue';
-import toph from './toph.svg';
-import textureSvg from './texture.svg';
-import cageSvg from './cage.svg';
-import circuitSvg from './circuit.svg';
 
 export default {
   name: "App",
