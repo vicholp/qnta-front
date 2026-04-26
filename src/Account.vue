@@ -1,7 +1,7 @@
 <template>
   <div class="pt-5 px-2 max-w-xl mx-auto flex flex-col gap-10">
     <div :class="`${angle} from-indigo-500 to-violet-500 dark:from-indigo-600 dark:to-violet-600 rounded-xl ${account_not_found ? 'opacity-40' : ''}`">
-      <div :class="`bg-[url(${pattern})]`">
+      <div :class="`${pattern}`">
           <div :class="` p-5 rounded-xl flex flex-col gap-5 shadow-xl shadow-violet-300 dark:shadow-violet-950 dark:shadow-lg text-[#e2e2e2] font-semibold`">
             <div class="flex justify-end">
               <div class="text-lg pr-2 text-white/50">
@@ -68,7 +68,12 @@ export default {
       return `bg-linear-${this.getHash % 360}`;
     },
     pattern() {
-      const patterns = ['toph.svg', 'texture.svg', 'cage.svg', 'circuit.svg'];
+      const patterns = [
+        'bg-[url(/toph.svg)]', 
+        'bg-[url(/texture.svg)]', 
+        'bg-[url(/cage.svg)]', 
+        'bg-[url(/circuit.svg)]'
+      ];
       return patterns[this.getHash  % patterns.length];
     },
     getHash() { 
